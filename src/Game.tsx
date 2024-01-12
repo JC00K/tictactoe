@@ -55,10 +55,10 @@ function Game() {
     changePlayer();
   };
 
-  useEffect(() => {
-    const storedScores = localStorage.getItem('scores');
-    if (storedScores) setScores(JSON.parse(storedScores));
-  }, []);
+  // useEffect(() => {
+  //   const storedScores = localStorage.getItem('scores');
+  //   if (storedScores) setScores(JSON.parse(storedScores));
+  // }, []);
 
   useEffect(() => {
     if (gameState === INITIAL_GAME_STATE) return;
@@ -71,7 +71,7 @@ function Game() {
     const newScores = { ...scores };
     newScores[currentPlayer] = newPlayerScore;
     setScores(newScores);
-    localStorage.setItem('scores', JSON.stringify(newScores));
+    // localStorage.setItem('scores', JSON.stringify(newScores));
     resetBoard();
   };
 
